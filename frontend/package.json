@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.13",
-    "@squidcloud/react": "^1.0.51",
-    "@squidcloud/samples": "^1.0.11",
+    "@squidcloud/react": "^1.0.55",
+    "@squidcloud/samples": "^1.0.12",
     "firebase": "^10.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
