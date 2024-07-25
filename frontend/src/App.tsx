@@ -2,7 +2,6 @@ import { Snackbar, Alert } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useSquid } from '@squidcloud/react';
 import { useIdToken } from 'react-firebase-hooks/auth';
-// import { getIdToken, getIdTokenResult } from 'firebase/auth';
 import { auth } from './firebase.ts';
 import './App.css';
 import NavBar from './components/nav-bar.tsx';
