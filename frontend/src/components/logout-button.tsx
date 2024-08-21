@@ -1,12 +1,9 @@
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase.js';
+type PropTypes = {
+  onSignOut: () => void;
+};
 
-const LogoutButton = () => {
-  const logout = () => {
-    signOut(auth);
-  };
-
-  return <button onClick={() => logout()}>Log Out</button>;
+const LogoutButton: React.FC<PropTypes> = ({ onSignOut }) => {
+  return <button onClick={onSignOut}>Log Out</button>;
 };
 
 export default LogoutButton;

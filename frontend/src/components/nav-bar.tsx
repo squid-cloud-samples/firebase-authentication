@@ -3,20 +3,26 @@ import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 import LoginButton from './login-button';
 import LogoutButton from './logout-button';
 
-interface AuthProps {
+type AuthProps = {
   isAuthenticated: Boolean;
-}
+  onSignOut: () => void;
+  onSignIn: () => void;
+};
 
-const NavBar: React.FC<AuthProps> = ({ isAuthenticated }) => {
+const NavBar: React.FC<AuthProps> = ({
+  isAuthenticated,
+  onSignOut,
+  onSignIn,
+}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar position='fixed'>
         <Toolbar>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Firebase Auth Integration
           </Typography>
-          {!isAuthenticated && <LoginButton />}
-          {isAuthenticated && <LogoutButton />}
+          {!isAuthenticated && <LoginButton onSignIn={onSignIn} />}
+          {isAuthenticated && <LogoutButton onSignOut={onSignOut} />}
         </Toolbar>
       </AppBar>
     </Box>
