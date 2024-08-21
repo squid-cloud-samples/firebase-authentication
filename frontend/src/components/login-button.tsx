@@ -1,12 +1,9 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase.js';
+type PropTypes = {
+  onSignIn: () => void;
+};
 
-const LoginButton = () => {
-  const loginWithRedirect = () => {
-    signInWithEmailAndPassword(auth, 'test@test.test', 'password');
-  };
-
-  return <button onClick={() => loginWithRedirect()}>Log In</button>;
+const LoginButton: React.FC<PropTypes> = ({ onSignIn: login }) => {
+  return <button onClick={() => login}>Log In</button>;
 };
 
 export default LoginButton;
